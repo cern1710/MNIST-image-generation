@@ -17,7 +17,7 @@ class VAE(nn.Module):
         """Calculates VAE loss for given image batch."""
         # Encoding and reparameterization
         mean, log_std = self.encoder(imgs)
-        z = sample_reparameterize(mean, log_std)
+        z = sample_reparameterize(mean, torch.exp(log_std))
 
         # Decoding
         decoded_imgs = self.decoder(z)
