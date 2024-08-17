@@ -41,8 +41,8 @@ def train_VAE(model, train_loader, num_epochs, beta=1.0):
 if __name__ == "__main__":
     batch_size = 128
     num_filters = 32
-    z_dim = 2
-    learning_rate = 1e-4
+    z_dim = 20
+    learning_rate = 1e-3
     num_epochs = 10
 
     torch.manual_seed(42)
