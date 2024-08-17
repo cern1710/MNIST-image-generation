@@ -1,3 +1,3 @@
-# MNIST Image Generation
+# VAE Image Generation
 
 Trains a VAE model to generate 4-bit MNIST images.

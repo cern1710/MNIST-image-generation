@@ -23,8 +23,8 @@ class VAE(nn.Module):
         decoded_imgs = self.decoder(z)
 
         # Reconstruction loss
-        imgs = imgs.squeeze(1)  # [B,C,H,W] -> [B,H,W]
-        L_rec = F.cross_entropy(decoded_imgs, imgs, reduction='none').sum([1, 2]).mean()
+        L_rec = F.cross_entropy(decoded_imgs, imgs.squeeze(1),
+                                reduction='none').sum([1, 2]).mean()
 
         # Regularization loss
         L_reg = KL_divergence(mean, log_std).mean()
