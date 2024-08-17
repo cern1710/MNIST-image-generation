@@ -10,7 +10,7 @@ class CNNEncoder(nn.Module):
         self.conv1 = nn.Conv2d(num_input_channels, num_filters, kernel_size=4, stride=2, padding=1)
         self.conv2 = nn.Conv2d(num_filters, num_filters * 2, kernel_size=4, stride=2, padding=1)
         self.relu = nn.ReLU()
-        conv_output_size = num_filters * 28
+        conv_output_size = num_filters * 98
 
         self.fc_mean = nn.Linear(conv_output_size, z_dim)
         self.fc_log_std = nn.Linear(conv_output_size, z_dim)

@@ -7,7 +7,7 @@ class CNNDecoder(nn.Module):
                  z_dim: int = 20):
         super().__init__()
 
-        self.fc = nn.Linear(z_dim, num_filters * 28)
+        self.fc = nn.Linear(z_dim, num_filters * 98)
         self.deconv1 = nn.ConvTranspose2d(num_filters * 2, num_filters, kernel_size=4, stride=2, padding=1)
         self.deconv2 = nn.ConvTranspose2d(num_filters, num_input_channels, kernel_size=4, stride=2, padding=1)
         self.relu = nn.ReLU()
